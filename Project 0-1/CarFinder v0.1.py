@@ -4,10 +4,6 @@
 class CarFinder:
     # list of all the vehicles authorized by CarFinder
     AllowedVehiclesList = ['Ford F-150', 'Chevrolet Silverado', 'Tesla CyberTruck', 'Toyota Tundra', 'Nissan Titan' ]
-    # does nothing at the moment
-    def __init__(self):
-        
-        pass
     # creates the title for CarFinder version 0.1 
     def menu_title(self):
         print("********************************")
