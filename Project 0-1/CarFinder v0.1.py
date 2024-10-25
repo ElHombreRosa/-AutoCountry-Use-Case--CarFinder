@@ -35,8 +35,8 @@ class CarFinder:
                 print("\nThank you for using the AutoCountry Vehicle Finder, good-bye!")
                 break
             else:
-                print("\n Invalid choice, please try again.")
-                input("\n Press 1 or 2 to continue: ")
+                print("\nInvalid choice, please try again.")
+                input("\nPress any key to continue: ")
 
 if __name__ == "__main__":
     car_finder = CarFinder()
