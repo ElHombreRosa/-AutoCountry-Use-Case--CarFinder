@@ -26,10 +26,10 @@ class CarFinder:
             self.menu_display()
             # asking for users input
             selection_choices =  input("Enter Choice Here: ")
-            # 1 is selected it will print out list of vehicles from AllowedVehiclesList (authorized)
+            # if 1 is selected it will print out list of vehicles from AllowedVehiclesList (authorized)
             if selection_choices == "1":
                 self.authorized_vehicles()
-            # 2 is selected it will say a thank you message and end the loop
+            # if 2 is selected it will say a thank you message and end the loop
             elif selection_choices == "2":
                 print("\nThank you for using the AutoCountry Vehicle Finder, good-bye!")
                 break
