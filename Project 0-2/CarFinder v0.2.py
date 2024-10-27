@@ -7,12 +7,13 @@ class CarFinder:
     # creates the title for CarFinder version 0.2 
     def menu_title(self):
         print("********************************")
-        print("AutoCountry Vehicle Finder v0.1")
+        print("AutoCountry Vehicle Finder v0.2")
         print("********************************")
     # create menu and choices with in the program
     def menu_display(self):
         print("Please Enter the following number below from the following menu:")
-        print("\n1. PRINT all Authorized Vehicles\n2. SEARCH for Authorized Vehicle\n3. Exit\n")
+        print("\n1. PRINT all Authorized Vehicles\n2. SEARCH for Authorized Vehicle\n3. Exit")
+        print("********************************")
     # if option 1 is pick , print out intro sentences and the list of vehicles in AllowedVehiclesList
     def authorized_vehicles(self):
         print("\nThe AutoCountry sales manager has authorized the purchase and selling of the following vehicles: ")
@@ -24,7 +25,7 @@ class CarFinder:
         if vehicle_userinput in self.AllowedVehiclesList: #checking for vehicles in AllowedVehiclesList
             print(f"{vehicle_userinput} is an authorized vehicle")
         else:
-            print(f"{vehicle_userinput} is not an authorized vehicle")
+            print(f"{vehicle_userinput} is not an authorized vehicle, if you received this in error please check the spelling and try again")
     # main loop the program will cycle through for the user
     def main(self):
         while True:
