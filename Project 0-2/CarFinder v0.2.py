@@ -36,7 +36,7 @@ class CarFinder:
             # if 1 is selected it will print out list of vehicles from AllowedVehiclesList (authorized)
             if selection_choices == "1":
                 self.authorized_vehicles()
-            # if 2 is selected , it will allow the user to search for vehicles (could be or not authorized)
+            # if 2 is selected , it will allow the user to search for vehicles / check if authorized
             elif selection_choices == "2":
                 self.search()
             # if 3 is selected it will say a thank you message and end the loop
