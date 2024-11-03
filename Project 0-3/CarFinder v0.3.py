@@ -36,9 +36,14 @@ class CarFinder:
             print(f"{vehicle_userinput} is not an authorized vehicle, if you received this in error please check the spelling and try again")
     
     
-    # if option 3 is pick this allows you to add an authorized vehicles to AllowedVehiclesList
+    # option 3 is pick this allows Sales Manger to add an authorized vehicles to AllowedVehiclesList
     def add_vehicles(self):
-                
+        added_vehicle = input("Please Enter the full Vehicle name you would like to add: ")
+        if added_vehicle in self.AllowedVehiclesList:
+            self.AllowedVehiclesList.append(added_vehicle) # add input vehicle to AllowedVehiclesList
+            print(f"You have added {added_vehicle} as an authorized vehicle")
+        else:
+            print(f"{added_vehicle} is an authorized vehicle already")
      
             
     # main loop the program will cycle through for the user
@@ -59,6 +64,10 @@ class CarFinder:
             elif selection_choices == "2":
                 self.vehicles_search()
                 
+            # if 3 is selected, allow user to input new vehicle to list    
+            elif selection_choices == "3":
+                self.add_vehicles
+                    
             # if 4 is selected it will say a thank you message and end the loop
             elif selection_choices == "4":
                 print("\nThank you for using the AutoCountry Vehicle Finder, good-bye!")
