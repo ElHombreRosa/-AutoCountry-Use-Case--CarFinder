@@ -49,12 +49,18 @@ class CarFinder:
     def delete_vehicles(self): 
         erase_vehicle = input("Please Enter the full Vehicle name you would like to REMOVE: ")
         if erase_vehicle in self.AllowedVehiclesList:
-            confirming = input(f"Are you sure you want to remove {erase_vehicle} from the Authorized Vehicles List?\n")
-            if confirming == "yes":
-                self.AllowedVehiclesList.remove(erase_vehicle) # remove vehicle off list
-                print(f"You have REMOVED {erase_vehicle} as an authorized vehicle")
-            else:
-                print("Invalid input. Please enter yes or no ")
+            while True: # loop back through
+                confirming = input(f"Are you sure you want to remove {erase_vehicle} from the Authorized Vehicles List?\n")
+                if confirming.lower()== "yes":
+                    self.AllowedVehiclesList.remove(erase_vehicle) # remove vehicle off list
+                    print(f"You have REMOVED {erase_vehicle} as an authorized vehicle")
+                    break
+                elif confirming.lower() == "no":
+                    break
+                else:
+                    print("Invalid input. Please enter yes or no ")
+        else:
+            print(f"{erase_vehicle} is not on Authorized Vehicle List")
         
     # main loop the program will cycle through for the user
     def main(self):
