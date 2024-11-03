@@ -66,7 +66,7 @@ class CarFinder:
                 
             # if 3 is selected, allow user to input new vehicle to list    
             elif selection_choices == "3":
-                self.add_vehicles
+                self.add_vehicles()
                     
             # if 4 is selected it will say a thank you message and end the loop
             elif selection_choices == "4":
