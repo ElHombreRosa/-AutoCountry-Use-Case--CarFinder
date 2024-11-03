@@ -16,7 +16,7 @@ class CarFinder:
     # create menu and choices with in the program
     def menu_display(self):
         print("Please Enter the following number below from the following menu:")
-        print("\n1. PRINT all Authorized Vehicles\n2. SEARCH for Authorized Vehicle\n3. ADD Authorized Vehicle\n4. Exit")
+        print("\n1. PRINT all Authorized Vehicles\n2. SEARCH for Authorized Vehicle\n3. ADD Authorized Vehicle\n4. DELETE Authorized Vehicle\n5. Exit")
         print("********************************")
         
         
@@ -44,7 +44,18 @@ class CarFinder:
         else:
             self.AllowedVehiclesList.append(added_vehicle) # add input vehicle to AllowedVehiclesList
             print(f"You have added {added_vehicle} as an authorized vehicle")
-            
+    
+    # option 4 is for deleting vehicles form AllowedVehiclesList
+    def delete_vehicles(self): 
+        erase_vehicle = input("Please Enter the full Vehicle name you would like to REMOVE: ")
+        if erase_vehicle in self.AllowedVehiclesList:
+            confirming = input(f"Are you sure you want to remove {erase_vehicle} from the Authorized Vehicles List?\n")
+            if confirming == "yes":
+                self.AllowedVehiclesList.remove(erase_vehicle) # remove vehicle off list
+                print(f"You have REMOVED {erase_vehicle} as an authorized vehicle")
+            else:
+                print("Invalid input. Please enter yes or no ")
+        
     # main loop the program will cycle through for the user
     def main(self):
         while True:
@@ -66,9 +77,13 @@ class CarFinder:
             # if 3 is selected, allow user to input new vehicle to list    
             elif selection_choices == "3":
                 self.add_vehicles()
-                    
-            # if 4 is selected it will say a thank you message and end the loop
+            
+            # if 4 is selected, allow user to delete vehicle from list
             elif selection_choices == "4":
+                self.delete_vehicles()
+                        
+            # if 5 is selected it will say a thank you message and end the loop
+            elif selection_choices == "5":
                 print("\nThank you for using the AutoCountry Vehicle Finder, good-bye!")
                 break
             
