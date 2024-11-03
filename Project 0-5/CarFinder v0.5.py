@@ -3,25 +3,35 @@
 # created a class named CarFinder to contain everything
 
 import os
+
 class CarFinder:
     # list of all the vehicles authorized by CarFinder
-    AllowedVehiclesList = 'allowed_vehicles.txt'
-    
+    AllowedVehiclesFile = 'allowed_vehicles.txt'
+    AllowedVehiclesList = [ 'Ford F-150', 'Chevrolet Silverado', 'Tesla CyberTruck', 'Toyota Tundra', 'Rivian R1T', 'Ram 1500' ]
     # initialize list from text file
     def __init__(self):
         self.AllowedVehiclesList = self.load_allowed_vehicles()
     
+    
     # load vehicles from text file / create file if it doesnt exist    
     def load_allowed_vehicles(self):
-        if not os.path.exists(self.AllowedVehiclesList):
-            open(self.AllowedVehiclesList, 'w').close()
+        if not os.path.exists(self.AllowedVehiclesFile):
+            self.create_allowed_vehicles_file()
         # read each line of text file
-        with open(self.AllowedVehiclesList, 'r') as file:
+        with open(self.AllowedVehiclesFile, 'r') as file:
             return [line.strip() for line in file.readlines()]
+    
+        
+    # create the text file from List(array) in AllowedVehiclesList
+    def create_allowed_vehicles_file(self):
+        with open(self.AllowedVehiclesFile, 'w') as file:
+            for vehicle in self.AllowedVehiclesList:
+                file.write(vehicle + '\n')
+
 
     # sends changes done to text from add and delete functions
     def changes_allowed_vehicles(self):
-        with open(self.AllowedVehiclesList, 'w') as file:
+        with open(self.AllowedVehiclesFile, 'w') as file:
             for vehicle in self.AllowedVehiclesList:
                 file.write(vehicle + '\n')
     
@@ -63,6 +73,7 @@ class CarFinder:
             print(f"{added_vehicle} is an authorized vehicle already")
         else:
             self.AllowedVehiclesList.append(added_vehicle) # add input vehicle to AllowedVehiclesList
+            self.changes_allowed_vehicles()
             print(f"You have added {added_vehicle} as an authorized vehicle")
     
     # option 4 is for deleting vehicles form AllowedVehiclesList
@@ -73,6 +84,7 @@ class CarFinder:
                 confirming = input(f"Are you sure you want to remove {erase_vehicle} from the Authorized Vehicles List?\n")
                 if confirming.lower()== "yes":
                     self.AllowedVehiclesList.remove(erase_vehicle)# remove vehicle off list
+                    self.changes_allowed_vehicles()
                     print(f"You have REMOVED {erase_vehicle} as an authorized vehicle")
                     break
                 elif confirming.lower() == "no":
