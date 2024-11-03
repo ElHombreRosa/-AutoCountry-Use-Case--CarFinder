@@ -18,7 +18,7 @@ class CarFinder:
         # read each line of text file
         with open(self.AllowedVehiclesFile, 'r') as file:
             return [line.strip() for line in file.readlines()]
-    
+
            
     # creates the title for CarFinder version 0.5  
     def menu_title(self):
@@ -66,7 +66,7 @@ class CarFinder:
             while True: # loop back through
                 confirming = input(f"Are you sure you want to remove {erase_vehicle} from the Authorized Vehicles List?\n")
                 if confirming.lower()== "yes":
-                    self.AllowedVehiclesList.remove(erase_vehicle) # remove vehicle off list
+                    self.AllowedVehiclesList.remove(erase_vehicle)# remove vehicle off list
                     print(f"You have REMOVED {erase_vehicle} as an authorized vehicle")
                     break
                 elif confirming.lower() == "no":
