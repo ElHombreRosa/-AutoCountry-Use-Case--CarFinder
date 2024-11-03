@@ -40,11 +40,10 @@ class CarFinder:
     def add_vehicles(self):
         added_vehicle = input("Please Enter the full Vehicle name you would like to add: ")
         if added_vehicle in self.AllowedVehiclesList:
+            print(f"{added_vehicle} is an authorized vehicle already")
+        else:
             self.AllowedVehiclesList.append(added_vehicle) # add input vehicle to AllowedVehiclesList
             print(f"You have added {added_vehicle} as an authorized vehicle")
-        else:
-            print(f"{added_vehicle} is an authorized vehicle already")
-     
             
     # main loop the program will cycle through for the user
     def main(self):
