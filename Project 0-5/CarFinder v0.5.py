@@ -5,7 +5,7 @@
 import os
 class CarFinder:
     # list of all the vehicles authorized by CarFinder
-    AllowedVehiclesFile = 'allowed_vehicles.txt'
+    AllowedVehiclesList = 'allowed_vehicles.txt'
     
     # initialize list from text file
     def __init__(self):
@@ -13,12 +13,18 @@ class CarFinder:
     
     # load vehicles from text file / create file if it doesnt exist    
     def load_allowed_vehicles(self):
-        if not os.path.exists(self.AllowedVehiclesFile):
-            open(self.AllowedVehiclesFile, 'w').close()
+        if not os.path.exists(self.AllowedVehiclesList):
+            open(self.AllowedVehiclesList, 'w').close()
         # read each line of text file
-        with open(self.AllowedVehiclesFile, 'r') as file:
+        with open(self.AllowedVehiclesList, 'r') as file:
             return [line.strip() for line in file.readlines()]
 
+    # sends changes done to text from add and delete functions
+    def changes_allowed_vehicles(self):
+        with open(self.AllowedVehiclesList, 'w') as file:
+            for vehicle in self.AllowedVehiclesList:
+                file.write(vehicle + '\n')
+    
            
     # creates the title for CarFinder version 0.5  
     def menu_title(self):
