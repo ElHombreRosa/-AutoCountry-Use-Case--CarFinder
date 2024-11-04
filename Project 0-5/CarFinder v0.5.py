@@ -1,10 +1,10 @@
 # CarFinder v0.5
 # 11/24/2024
-# created a class named CarFinder to contain everything
+
 
 import os
 import getpass
-
+# created a class named CarFinder to contain everything
 class CarFinder:
     # list of all the vehicles authorized by CarFinder
     AllowedVehiclesFile = 'allowed_vehicles.txt'
