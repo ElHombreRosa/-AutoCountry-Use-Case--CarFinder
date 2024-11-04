@@ -3,6 +3,7 @@
 # created a class named CarFinder to contain everything
 
 import os
+import getpass
 
 class CarFinder:
     # list of all the vehicles authorized by CarFinder
@@ -102,7 +103,7 @@ class CarFinder:
             self.menu_display()
             
             # asking for users input
-            selection_choices =  input("Enter Choice Here: ")
+            selection_choices =  getpass.getpass("")
             
             # if 1 is selected it will print out list of vehicles from AllowedVehiclesList (authorized)
             if selection_choices == "1":
