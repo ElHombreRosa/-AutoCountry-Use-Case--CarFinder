@@ -103,7 +103,7 @@ class CarFinder:
             self.menu_display()
             
             # asking for users input
-            selection_choices =  getpass.getpass("")
+            selection_choices =  getpass.getpass("") # make users input invisible , less clutter on interface
             
             # if 1 is selected it will print out list of vehicles from AllowedVehiclesList (authorized)
             if selection_choices == "1":
